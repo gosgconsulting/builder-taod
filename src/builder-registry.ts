@@ -2,6 +2,16 @@ import { Builder } from "@builder.io/react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Textarea } from "@/components/ui/textarea";
+import { Separator } from "@/components/ui/separator";
+import { Alert, AlertDescription, AlertTitle } from "@/components/ui/alert";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Progress } from "@/components/ui/progress";
+import { Skeleton } from "@/components/ui/skeleton";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
 // Register shadcn/ui Button component
 Builder.registerComponent(Button, {
@@ -127,6 +137,274 @@ Builder.registerComponent(Badge, {
       type: "string",
       enum: ["default", "secondary", "destructive", "outline"],
       defaultValue: "default",
+    },
+  ],
+});
+
+// Register Input component
+Builder.registerComponent(Input, {
+  name: "Input",
+  inputs: [
+    {
+      name: "type",
+      type: "string",
+      enum: ["text", "email", "password", "number", "tel", "url"],
+      defaultValue: "text",
+    },
+    {
+      name: "placeholder",
+      type: "string",
+      defaultValue: "Enter text...",
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: false,
+    },
+  ],
+});
+
+// Register Label component
+Builder.registerComponent(Label, {
+  name: "Label",
+  inputs: [
+    {
+      name: "children",
+      type: "text",
+      defaultValue: "Label",
+    },
+    {
+      name: "htmlFor",
+      type: "string",
+    },
+  ],
+});
+
+// Register Textarea component
+Builder.registerComponent(Textarea, {
+  name: "Textarea",
+  inputs: [
+    {
+      name: "placeholder",
+      type: "string",
+      defaultValue: "Enter your message...",
+    },
+    {
+      name: "rows",
+      type: "number",
+      defaultValue: 4,
+    },
+    {
+      name: "disabled",
+      type: "boolean",
+      defaultValue: false,
+    },
+  ],
+});
+
+// Register Separator component
+Builder.registerComponent(Separator, {
+  name: "Separator",
+  inputs: [
+    {
+      name: "orientation",
+      type: "string",
+      enum: ["horizontal", "vertical"],
+      defaultValue: "horizontal",
+    },
+  ],
+});
+
+// Register Alert components
+Builder.registerComponent(Alert, {
+  name: "Alert",
+  inputs: [
+    {
+      name: "variant",
+      type: "string",
+      enum: ["default", "destructive"],
+      defaultValue: "default",
+    },
+  ],
+  canHaveChildren: true,
+});
+
+Builder.registerComponent(AlertTitle, {
+  name: "Alert Title",
+  inputs: [
+    {
+      name: "children",
+      type: "text",
+      defaultValue: "Alert Title",
+    },
+  ],
+});
+
+Builder.registerComponent(AlertDescription, {
+  name: "Alert Description",
+  inputs: [
+    {
+      name: "children",
+      type: "text",
+      defaultValue: "Alert description text",
+    },
+  ],
+});
+
+// Register Avatar components
+Builder.registerComponent(Avatar, {
+  name: "Avatar",
+  canHaveChildren: true,
+});
+
+Builder.registerComponent(AvatarImage, {
+  name: "Avatar Image",
+  inputs: [
+    {
+      name: "src",
+      type: "file",
+      allowedFileTypes: ["jpeg", "jpg", "png", "svg"],
+    },
+    {
+      name: "alt",
+      type: "string",
+      defaultValue: "Avatar",
+    },
+  ],
+});
+
+Builder.registerComponent(AvatarFallback, {
+  name: "Avatar Fallback",
+  inputs: [
+    {
+      name: "children",
+      type: "text",
+      defaultValue: "AB",
+    },
+  ],
+});
+
+// Register Progress component
+Builder.registerComponent(Progress, {
+  name: "Progress",
+  inputs: [
+    {
+      name: "value",
+      type: "number",
+      defaultValue: 50,
+      min: 0,
+      max: 100,
+    },
+  ],
+});
+
+// Register Skeleton component
+Builder.registerComponent(Skeleton, {
+  name: "Skeleton",
+  inputs: [
+    {
+      name: "className",
+      type: "string",
+      defaultValue: "h-4 w-[250px]",
+    },
+  ],
+});
+
+// Register Tabs components
+Builder.registerComponent(Tabs, {
+  name: "Tabs",
+  inputs: [
+    {
+      name: "defaultValue",
+      type: "string",
+      defaultValue: "tab1",
+    },
+  ],
+  canHaveChildren: true,
+});
+
+Builder.registerComponent(TabsList, {
+  name: "Tabs List",
+  canHaveChildren: true,
+});
+
+Builder.registerComponent(TabsTrigger, {
+  name: "Tabs Trigger",
+  inputs: [
+    {
+      name: "value",
+      type: "string",
+      defaultValue: "tab1",
+    },
+    {
+      name: "children",
+      type: "text",
+      defaultValue: "Tab 1",
+    },
+  ],
+});
+
+Builder.registerComponent(TabsContent, {
+  name: "Tabs Content",
+  inputs: [
+    {
+      name: "value",
+      type: "string",
+      defaultValue: "tab1",
+    },
+  ],
+  canHaveChildren: true,
+});
+
+// Register Accordion components
+Builder.registerComponent(Accordion, {
+  name: "Accordion",
+  inputs: [
+    {
+      name: "type",
+      type: "string",
+      enum: ["single", "multiple"],
+      defaultValue: "single",
+    },
+    {
+      name: "collapsible",
+      type: "boolean",
+      defaultValue: true,
+    },
+  ],
+  canHaveChildren: true,
+});
+
+Builder.registerComponent(AccordionItem, {
+  name: "Accordion Item",
+  inputs: [
+    {
+      name: "value",
+      type: "string",
+      defaultValue: "item-1",
+    },
+  ],
+  canHaveChildren: true,
+});
+
+Builder.registerComponent(AccordionTrigger, {
+  name: "Accordion Trigger",
+  inputs: [
+    {
+      name: "children",
+      type: "text",
+      defaultValue: "Is it accessible?",
+    },
+  ],
+});
+
+Builder.registerComponent(AccordionContent, {
+  name: "Accordion Content",
+  inputs: [
+    {
+      name: "children",
+      type: "text",
+      defaultValue: "Yes. It adheres to the WAI-ARIA design pattern.",
     },
   ],
 });

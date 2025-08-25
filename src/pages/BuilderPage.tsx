@@ -1,6 +1,7 @@
 import { BuilderComponent, builder, useIsPreviewing } from "@builder.io/react";
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import Layout from "@/components/Layout";
 
 const BuilderPage = () => {
   const [content, setContent] = useState(null);
@@ -39,27 +40,31 @@ const BuilderPage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-lg">Loading...</div>
-      </div>
+      <Layout>
+        <div className="flex items-center justify-center py-20">
+          <div className="text-lg">Loading...</div>
+        </div>
+      </Layout>
     );
   }
 
   if (notFound) {
     return (
-      <div className="min-h-screen flex items-center justify-center">
-        <div className="text-center">
-          <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
-          <p className="text-gray-600">The page you're looking for doesn't exist.</p>
+      <Layout>
+        <div className="flex items-center justify-center py-20">
+          <div className="text-center">
+            <h1 className="text-4xl font-bold mb-4">404 - Page Not Found</h1>
+            <p className="text-gray-600">The page you're looking for doesn't exist.</p>
+          </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 
   return (
-    <div className="min-h-screen">
+    <Layout>
       <BuilderComponent model="page" content={content} />
-    </div>
+    </Layout>
   );
 };
 

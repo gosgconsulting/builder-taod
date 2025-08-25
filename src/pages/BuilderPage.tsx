@@ -61,6 +61,12 @@ const BuilderPage = () => {
     );
   }
 
+  // In Builder.io Visual Editor, render without Layout wrapper for proper editing
+  if (isPreviewing) {
+    return <BuilderComponent model="page" content={content} />;
+  }
+
+  // For live site, render with Layout wrapper
   return (
     <Layout>
       <BuilderComponent model="page" content={content} />

@@ -93,19 +93,22 @@ const BuilderHeroSection = ({
   );
 };
 
-// Register Hero Section component
+// Register Hero Section component with Builder.io
 Builder.registerComponent(BuilderHeroSection, {
-  name: "Hero Section with Slider",
+  name: "Hero Section",
+  image: "https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F8aa0c0b8e5b54d8a9b8e8c8d8e8f8g8h",
+  canHaveChildren: false,
   inputs: [
     {
       name: "title",
       type: "text",
-      defaultValue: "Where Dreams",
+      defaultValue: "Transform Your Passion Into Performance",
+      required: true,
     },
     {
       name: "subtitle", 
       type: "longText",
-      defaultValue: "Singapore's premium ballet and dance academy, nurturing artistic excellence and inspiring confidence through the transformative power of dance.",
+      defaultValue: "Join Australia's premier dance academy where artistry meets excellence. From classical ballet to contemporary fusion, discover your unique voice through movement.",
     },
     {
       name: "heroImages",
@@ -118,15 +121,20 @@ Builder.registerComponent(BuilderHeroSection, {
         }
       ],
       defaultValue: [
-        { image: '/lovable-uploads/f8f4ebc7-577a-4261-840b-20a866629516.png' },
-        { image: '/lovable-uploads/fafdb3ad-f058-4c32-9065-7d540d362cd7.png' },
-        { image: '/lovable-uploads/0b3fd9e6-e4f5-4482-9171-5515f1985ac2.png' }
+        { image: "/lovable-uploads/f8f4ebc7-577a-4261-840b-20a866629516.png" },
+        { image: "/lovable-uploads/007de019-e0b0-490d-90cd-cced1de404b8.png" },
+        { image: "/lovable-uploads/026cddda-e890-486d-be1e-8052ff34515e.png" }
       ],
     },
     {
       name: "buttonText",
-      type: "text", 
+      type: "text",
       defaultValue: "Start Your Journey",
+    },
+    {
+      name: "buttonAction",
+      type: "text",
+      defaultValue: "trials",
     },
   ],
 });

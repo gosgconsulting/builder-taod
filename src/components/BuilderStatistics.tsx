@@ -59,6 +59,8 @@ const BuilderStatistics = ({
 // Register Statistics component
 Builder.registerComponent(BuilderStatistics, {
   name: "Statistics Section",
+  image: "https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F8aa0c0b8e5b54d8a9b8e8c8d8e8f8g8h",
+  canHaveChildren: false,
   inputs: [
     {
       name: "title",

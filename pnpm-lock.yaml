@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@builder.io/react':
-        specifier: ^8.2.6
-        version: 8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+        specifier: ^3.2.7
+        version: 3.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       '@hookform/resolvers':
         specifier: ^3.9.0
         version: 3.10.0(react-hook-form@7.62.0(react@18.3.1))
@@ -262,15 +262,15 @@ packages:
     resolution: {integrity: sha512-ruv7Ae4J5dUYULmeXw1gmb7rYRz57OWCPM57pHojnLq/3Z1CK2lNSLTCVjxVk1F/TZHwOZZrOWi0ur95BbLxNQ==}
     engines: {node: '>=6.9.0'}
 
-  '@builder.io/react@8.2.6':
-    resolution: {integrity: sha512-y6lOq9glAFGuaGhIB/yOyOy93vgeZ872YytIkci+yG013kwB9rD/6uShc2PSLA4D0JBdNxkCzeoBDZxfeI1ZkQ==}
+  '@builder.io/react@3.2.12':
+    resolution: {integrity: sha512-d7wodMBQMU6e/fXn1Tqo6xr1urKzLu6cygvtLfmea7/SThXow2p4ltPF/eKGeVGKvfHWqt4VM7v2hL5NMpirog==}
     engines: {node: '>=6.0.0'}
     peerDependencies:
-      react: '>=16.8.0 || ^19.0.0-rc'
-      react-dom: '>=16.8.0 || ^19.0.0-rc'
+      react: '>=16.8.0'
+      react-dom: '>=16.8.0'
 
-  '@builder.io/sdk@6.1.2':
-    resolution: {integrity: sha512-b2SZR+e2J1X9anH/sttJNRX3Hq5CYYtYz2smxFEfIPm7wEnNMRacO6VKlwxrkwqp11fBbJw9/XxB+IMsZWaOiw==}
+  '@builder.io/sdk@2.2.6':
+    resolution: {integrity: sha512-8HmQbrCIYDivw+4j2hlgWSozqxxTef0PjL+EUqxrPQ3IeDf0ZPSO7NbrROpyTrC5sVdsj8jST6bVcBON59h2Bg==}
 
   '@emotion/cache@10.0.29':
     resolution: {integrity: sha512-fU2VtSVlHiF27empSbxi1O2JFdNWZO+2NFHfwO0pxgTep6Xa3uGb+3pVKfLww2l/IBGLNEZl5Xf/++A4wAYDYQ==}
@@ -2947,9 +2947,9 @@ snapshots:
       '@babel/helper-string-parser': 7.27.1
       '@babel/helper-validator-identifier': 7.27.1
 
-  '@builder.io/react@8.2.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
+  '@builder.io/react@3.2.12(react-dom@18.3.1(react@18.3.1))(react@18.3.1)':
     dependencies:
-      '@builder.io/sdk': 6.1.2
+      '@builder.io/sdk': 2.2.6
       '@emotion/core': 10.3.1(react@18.3.1)
       hash-sum: 2.0.0
       isolated-vm: 5.0.4
@@ -2963,7 +2963,7 @@ snapshots:
       - encoding
       - supports-color
 
-  '@builder.io/sdk@6.1.2':
+  '@builder.io/sdk@2.2.6':
     dependencies:
       hash-sum: 2.0.0
       node-fetch: 2.7.0

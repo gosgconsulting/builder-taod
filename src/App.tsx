@@ -3,6 +3,8 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { builder } from "@builder.io/react";
+import "./builder-registry";
 import Index from "./pages/Index";
 import Blog from "./pages/Blog";
 import BlogPost from "./pages/BlogPost";
@@ -12,6 +14,10 @@ import BlogAuthor from "./pages/BlogAuthor";
 import TermsConditions from "./pages/TermsConditions";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
+import BuilderPage from "./pages/BuilderPage";
+
+// Initialize Builder.io with your API key
+builder.init(import.meta.env.VITE_BUILDER_PUBLIC_KEY);
 
 const queryClient = new QueryClient();
 
@@ -31,6 +37,7 @@ const App = () => (
           <Route path="/terms-conditions" element={<TermsConditions />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/builder/*" element={<BuilderPage />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

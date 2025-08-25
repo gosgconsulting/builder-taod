@@ -16,8 +16,11 @@ import PrivacyPolicy from "./pages/PrivacyPolicy";
 import NotFound from "./pages/NotFound";
 import BuilderPage from "./pages/BuilderPage";
 
-// Initialize Builder.io with your API key
+// Initialize Builder.io with your API key and enable data features
 builder.init(import.meta.env.VITE_BUILDER_PUBLIC_KEY);
+
+// Enable Builder.io data features for interactivity
+builder.canTrack = true;
 
 const queryClient = new QueryClient();
 

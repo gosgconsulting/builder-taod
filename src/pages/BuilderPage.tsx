@@ -63,13 +63,41 @@ const BuilderPage = () => {
 
   // In Builder.io Visual Editor, render without Layout wrapper for proper editing
   if (isPreviewing) {
-    return <BuilderComponent model="page" content={content} />;
+    return (
+      <BuilderComponent 
+        model="page" 
+        content={content}
+        data={{
+          // Sample data for testing Data tab functionality
+          user: { name: "John Doe", email: "john@example.com" },
+          products: [
+            { id: 1, name: "Product A", price: 99 },
+            { id: 2, name: "Product B", price: 149 },
+            { id: 3, name: "Product C", price: 199 }
+          ],
+          settings: { theme: "light", notifications: true }
+        }}
+      />
+    );
   }
 
   // For live site, render with Layout wrapper
   return (
     <Layout>
-      <BuilderComponent model="page" content={content} />
+      <BuilderComponent 
+        model="page" 
+        content={content}
+        data={{
+          // Sample data for live site
+          user: { name: "John Doe", email: "john@example.com" },
+          products: [
+            { id: 1, name: "Product A", price: 99 },
+            { id: 2, name: "Product B", price: 149 },
+            { id: 3, name: "Product C", price: 199 }
+          ],
+          settings: { theme: "light", notifications: true }
+        }}
+      />
     </Layout>
   );
 };

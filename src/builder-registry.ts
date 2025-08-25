@@ -12,6 +12,14 @@ import { Progress } from "@/components/ui/progress";
 import { Skeleton } from "@/components/ui/skeleton";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import DataExample from "@/components/DataExample";
+import BuilderSection from "@/components/BuilderSection";
+import BuilderContainer from "@/components/BuilderContainer";
+import BuilderHeroSection from "@/components/BuilderHeroSection";
+import BuilderGallery from "@/components/BuilderGallery";
+import BuilderStatistics from "@/components/BuilderStatistics";
+import BuilderCarousel from "@/components/BuilderCarousel";
+import BuilderTabsSection from "@/components/BuilderTabsSection";
 
 // Register shadcn/ui Button component
 Builder.registerComponent(Button, {
@@ -408,5 +416,7 @@ Builder.registerComponent(AccordionContent, {
     },
   ],
 });
+
+// Section and layout components will be imported from separate files
 
 // Custom components will be registered separately in component files

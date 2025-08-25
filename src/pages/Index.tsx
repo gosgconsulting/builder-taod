@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import WhatsAppChat from "@/components/WhatsAppChat";
 import Navigation from "@/components/Navigation";
+import BuilderZone from "@/components/BuilderZone";
 import HeroSection from "@/components/HeroSection";
 import TrialsSection from "@/components/TrialsSection";
 import AboutUsSection from "@/components/sections/AboutUsSection";
@@ -44,7 +45,14 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-white">
       <Navigation scrollToSection={scrollToSection} />
-      <HeroSection scrollToSection={scrollToSection} />
+      
+      {/* Builder.io Homepage Content */}
+      <BuilderZone 
+        model="page" 
+        modelId="f1c7be7d2e6f4e7494fb63aae8e8d6e7"
+        fallback={<HeroSection scrollToSection={scrollToSection} />}
+      />
+      
       <TrialsSection />
       <AboutUsSection />
       <VisionMissionSection />

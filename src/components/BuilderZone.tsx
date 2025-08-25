@@ -3,20 +3,34 @@ import { useEffect, useState } from "react";
 
 interface BuilderZoneProps {
   model: string;
+  modelId?: string;
   name?: string;
   fallback?: React.ReactNode;
 }
 
-const BuilderZone: React.FC<BuilderZoneProps> = ({ model, name, fallback }) => {
+const BuilderZone: React.FC<BuilderZoneProps> = ({ model, modelId, name, fallback }) => {
   const [content, setContent] = useState(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchContent = async () => {
       try {
-        const content = await builder
-          .get(model)
-          .promise();
+        let content;
+        if (modelId) {
+          // Fetch by specific model ID
+          content = await builder
+            .get(model, { 
+              query: { 
+                id: modelId 
+              } 
+            })
+            .promise();
+        } else {
+          // Fetch by model type
+          content = await builder
+            .get(model)
+            .promise();
+        }
         
         setContent(content);
       } catch (error) {
@@ -27,7 +41,7 @@ const BuilderZone: React.FC<BuilderZoneProps> = ({ model, name, fallback }) => {
     };
 
     fetchContent();
-  }, [model, name]);
+  }, [model, modelId, name]);
 
   if (loading) {
     return fallback || null;
